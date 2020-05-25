@@ -12,12 +12,12 @@ import * as React from 'react';
 import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
 
-import { HomeScreen } from './screens/home'
+import { AppNavigator } from './navigations/app'
 
 export default function App() {
   return (
     <NavigationContainer>
-      <HomeScreen/>
+      <AppNavigator/>
     </NavigationContainer>
   );
 }
