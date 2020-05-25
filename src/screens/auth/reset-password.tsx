@@ -1,11 +1,14 @@
 import React, { ReactElement } from 'react';
 import {
-  Text, StyleSheet,
+  Text, StyleSheet, View,
 } from 'react-native';
 
 export const ResetPasswordScreen = (): ReactElement => {
   return (
-    <Text style={styles.container}>Reset Password Screen</Text>
+    <View style={styles.container}>
+      <Text>Reset Password Screen</Text>
+    </View>
+    
   );  
 }
 

@@ -1,11 +1,13 @@
 import React, { ReactElement } from 'react';
 import {
-  Text, StyleSheet,
+  Text, StyleSheet, View,
 } from 'react-native';
 
 export const HomeScreen = (): ReactElement => {
   return (
-    <Text style={styles.container}>Home Screen</Text>
+    <View style={styles.container}>
+      <Text>Home Screen</Text>
+    </View>
   );  
 }
 

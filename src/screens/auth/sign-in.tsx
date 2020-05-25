@@ -1,11 +1,13 @@
 import React, { ReactElement } from 'react';
 import {
-  Text, StyleSheet,
+  Text, StyleSheet, View,
 } from 'react-native';
 
 export const SignInScreen = (): ReactElement => {
   return (
-    <Text style={styles.container}>SignIn Screen</Text>
+    <View style={styles.container}>
+      <Text style={styles.container}>SignIn Screen</Text>
+    </View>
   );  
 }
 
