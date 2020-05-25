@@ -5,15 +5,15 @@ import {
 import { AppRoute } from '../navigations/app-routes'
 
 export const HomeScreen = (props): ReactElement => {
-  const alertMe = () => {
-    props.navigation.navigate(AppRoute.AUTH);
+  const move = (page: string) => {
+    props.navigation.navigate(page);
   }
 
   return (
     <View style={styles.container}>
       <Text>Home Screen</Text>
       <Button
-        onPress={alertMe}
+        onPress={()=>move(AppRoute.AUTH)}
         title="move Auth"
         color="#00f"
       />
@@ -26,11 +26,5 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-  },
-  button: {
-    backgroundColor: '#00aeef',
-    borderColor: 'red',
-    borderWidth: 5,
-    borderRadius: 15   
   }
 });

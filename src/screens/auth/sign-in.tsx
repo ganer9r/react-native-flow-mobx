@@ -5,18 +5,30 @@ import {
 import { AppRoute } from '../../../src/navigations/app-routes';
 
 export const SignInScreen = (props): ReactElement => {
-  const alertMe = () => {
-    props.navigation.navigate(AppRoute.HOME);
+  const move = (page: string) => {
+    props.navigation.navigate(page);
   }
 
   return (
     <View style={styles.container}>
       <Text>SignIn Screen</Text>
+      <Text>----------------------------</Text>
       <Button
-        onPress={alertMe}
+        onPress={() => move(AppRoute.HOME)}
         title="move Home"
         color="#00f"
       />
+      <Button
+        onPress={() => move(AppRoute.SIGN_UP)}
+        title="SignUp"
+        color="#0f0"
+      />
+      <Button
+        onPress={() => move(AppRoute.RESET_PASSWORD)}
+        title="Reset Password"
+        color="#0f0"
+      />
+
     </View>
   );  
 }
@@ -26,11 +38,5 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-  },
-  button: {
-    backgroundColor: '#00aeef',
-    borderColor: 'red',
-    borderWidth: 5,
-    borderRadius: 15   
   }
 });
