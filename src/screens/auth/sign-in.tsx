@@ -2,10 +2,11 @@ import React, { ReactElement } from 'react';
 import {
   Text, StyleSheet, View, Button, Alert,
 } from 'react-native';
+import { AppRoute } from '../../../src/navigations/app-routes';
 
 export const SignInScreen = (props): ReactElement => {
   const alertMe = () => {
-    props.navigation.navigate("Home");
+    props.navigation.navigate(AppRoute.HOME);
   }
 
   return (

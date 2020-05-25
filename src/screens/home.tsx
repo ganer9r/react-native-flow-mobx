@@ -2,10 +2,11 @@ import React, { ReactElement } from 'react';
 import {
   Text, StyleSheet, View, Button, Alert,
 } from 'react-native';
+import { AppRoute } from '../navigations/app-routes'
 
 export const HomeScreen = (props): ReactElement => {
   const alertMe = () => {
-    props.navigation.navigate("SignIn");
+    props.navigation.navigate(AppRoute.AUTH);
   }
 
   return (
