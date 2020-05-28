@@ -2,21 +2,19 @@ import React, { ReactElement } from 'react';
 import {
   Text, StyleSheet, View, Button, Alert,
 } from 'react-native';
-import { AppRoute } from '../navigations/app-routes'
+import { AppRoute } from '../../navigations/app-routes';
 
-export const HomeScreen = (props): ReactElement => {
-  const move = (page: string) => {
-    props.navigation.navigate(page);
-  }
-
+export const HomeTab4Screen = (props): ReactElement => {
   return (
     <View style={styles.container}>
-      <Text>Home Screen</Text>
-      <Button
-        onPress={()=>move(AppRoute.AUTH)}
-        title="move Auth"
+      <Text>Tab 4</Text>
+      <Text>----------------------------</Text>
+      {/* <Button
+        onPress={() => move()}
+        title="Close"
         color="#00f"
-      />
+      /> */}
+
     </View>
   );  
 }

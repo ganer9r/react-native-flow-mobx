@@ -2,20 +2,20 @@ import React, { ReactElement } from 'react';
 import {
   Text, StyleSheet, View, Button, Alert,
 } from 'react-native';
-import { AppRoute } from '../../../src/navigations/app-routes';
+import { AppRoute } from '../../navigations/app-routes';
 
-export const SignInScreen = (props): ReactElement => {
+export const WelcomeScreen = (props): ReactElement => {
   const move = (page: string) => {
     props.navigation.navigate(page);
   }
 
   return (
     <View style={styles.container}>
-      <Text>SignIn Screen</Text>
+      <Text>Welcome Screen</Text>
       <Text>----------------------------</Text>
       <Button
-        onPress={() => move(AppRoute.MAIN)}
-        title="move Home"
+        onPress={() => move(AppRoute.SIGN_IN)}
+        title="Sign In"
         color="#00f"
       />
       <Button
