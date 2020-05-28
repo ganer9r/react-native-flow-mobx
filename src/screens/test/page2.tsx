@@ -3,19 +3,24 @@ import {
   Text, StyleSheet, View, Button, Alert,
 } from 'react-native';
 import { AppRoute } from '../../navigations/app-routes';
-import Icon from 'react-native-vector-icons/FontAwesome';
 
-export const HomeTab3Screen = (props): ReactElement => {
+export const Page2Screen = (props): ReactElement => {
+  const modal = () => {
+    props.navigation.navigate(AppRoute.SIGN_IN);
+  }
+  const pushPage = (name: string) => {
+    props.navigation.navigate(name);
+  }
+
   return (
-    <View style={styles.container}>      
-      <Icon name="home" size={24} color="#ff0000" />
-      <Text>Tab 3</Text>
+    <View style={styles.container}>
+      <Text>Page 2</Text>
       <Text>----------------------------</Text>
-      {/* <Button
-        onPress={() => move()}
-        title="Close"
+      <Button
+        onPress={() => modal()}
+        title="Sign Modal Page"
         color="#00f"
-      /> */}
+      />
 
     </View>
   );  

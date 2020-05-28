@@ -14,7 +14,7 @@ export const SignInScreen = (props): ReactElement => {
       <Text>SignIn Screen</Text>
       <Text>----------------------------</Text>
       <Button
-        onPress={() => move(AppRoute.MAIN)}
+        onPress={() => move(AppRoute.HOME)}
         title="move Home"
         color="#00f"
       />
