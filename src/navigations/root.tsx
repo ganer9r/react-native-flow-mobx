@@ -5,14 +5,22 @@ import { SplashScreen } from '../screens/splash'
 import { AppRoute } from './app-routes'
 import { OnboardingScreen, SignInScreen, SignUpScreen, ResetPasswordScreen } from '../screens/auth'
 
-const Stack = createStackNavigator();
+import { Provider, observer } from "mobx-react";
+import { AppStore } from '../stores/app';
+import { AppContext } from '../appContext';
 
-export const RootNavigation = (): React.ReactElement => {
+const Stack = createStackNavigator();
+const appStore = new AppStore();
+
+export const RootNavigation = observer((): React.ReactElement => {
+  const { appStore } = React.useContext(AppContext);
   const isLoaded = false
 
-  if (!isLoaded) {
+  if (!appStore.isLoaded) {
     return (
-      <SplashScreen/>
+      <Provider a={appStore}>
+        <SplashScreen/>
+      </Provider>
     );
   }
 
@@ -26,4 +34,4 @@ export const RootNavigation = (): React.ReactElement => {
       <Stack.Screen name={AppRoute.RESET_PASSWORD} component={ResetPasswordScreen}/>
     </Stack.Navigator>
   )
-};
+});

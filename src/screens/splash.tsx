@@ -1,38 +1,29 @@
-import React, { Component, ReactElement } from 'react';
+import React, { ReactElement } from 'react';
 import {
   Text, StyleSheet, View, Button
 } from 'react-native';
-import { AppRoute } from '../navigations/app-routes'
-import { observer } from 'mobx-react'
-import { observable, computed } from 'mobx'
+import { AppContext } from '../appContext';
+import { observer } from "mobx-react";
 
-@observer
-export class SplashScreen extends Component {
-  @observable fire = []
-  @observable fireMessage = "testss"
 
-  @computed get shotFire() {
-    return this.fireMessage.substring(0, 2)
-  }
+interface Props {}
 
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text>{this.shotFire}</Text>
-        <Button
-          onPress={()=> this.fireMessage = 'change' }
-          title="Home"
-          color="#00f"
-        />
+export const SplashScreen = observer(function(props: Props) {
+  const { appStore } = React.useContext(AppContext);
 
-        <Test fireMessage={this.fireMessage}/>
-      </View>
-    
-    );
-  }
-}
+  return (
+    <View style={styles.container}>
+      <Text>Splash Screen</Text>
 
-const Test = observer(({fireMessage}) => <Text>{fireMessage}</Text>)
+      <Button
+        onPress={appStore.onLoadComplate}
+        title="load complate"
+        color="#00f"
+      />
+    </View>
+  );
+});
+
 
 const styles = StyleSheet.create({
   container: {

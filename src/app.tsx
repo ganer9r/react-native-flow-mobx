@@ -11,8 +11,8 @@
 import * as React from 'react';
 import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
-
 import { RootNavigation } from './navigations/root'
+import 'mobx-react/batchingForReactNative'
 
 export default function App() {
   return (
