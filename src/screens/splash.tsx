@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement, useEffect } from 'react';
 import {
   Text, StyleSheet, View, Button
 } from 'react-native';
@@ -10,6 +10,11 @@ interface Props {}
 
 export const SplashScreen = observer(function(props: Props) {
   const { appStore } = React.useContext(AppContext);
+  useEffect(() => {
+    setTimeout(function(){
+      appStore.onLoadComplate()
+    }, 5000);
+  }, []);
 
   return (
     <View style={styles.container}>
