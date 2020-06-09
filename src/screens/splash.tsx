@@ -1,25 +1,38 @@
-import React, { ReactElement } from 'react';
+import React, { Component, ReactElement } from 'react';
 import {
-  Text, StyleSheet, View, Button, Alert,
+  Text, StyleSheet, View, Button
 } from 'react-native';
 import { AppRoute } from '../navigations/app-routes'
+import { observer } from 'mobx-react'
+import { observable, computed } from 'mobx'
 
-export const SplashScreen = (props): ReactElement => {
-  const move = (page: string) => {
-    props.navigation.navigate(page);
+@observer
+export class SplashScreen extends Component {
+  @observable fire = []
+  @observable fireMessage = "testss"
+
+  @computed get shotFire() {
+    return this.fireMessage.substring(0, 2)
   }
 
-  return (
-    <View style={styles.container}>
-      <Text>SPlash Screen</Text>
-      <Button
-        onPress={()=>move(AppRoute.HOME)}
-        title="Home"
-        color="#00f"
-      />
-    </View>
-  );  
+  render() {
+    return (
+      <View style={styles.container}>
+        <Text>{this.shotFire}</Text>
+        <Button
+          onPress={()=> this.fireMessage = 'change' }
+          title="Home"
+          color="#00f"
+        />
+
+        <Test fireMessage={this.fireMessage}/>
+      </View>
+    
+    );
+  }
 }
+
+const Test = observer(({fireMessage}) => <Text>{fireMessage}</Text>)
 
 const styles = StyleSheet.create({
   container: {

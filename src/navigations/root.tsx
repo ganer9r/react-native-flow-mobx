@@ -11,7 +11,9 @@ export const RootNavigation = (): React.ReactElement => {
   const isLoaded = false
 
   if (!isLoaded) {
-    return <SplashScreen />;
+    return (
+      <SplashScreen/>
+    );
   }
 
   return (
