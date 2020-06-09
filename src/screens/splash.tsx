@@ -11,22 +11,10 @@ export const SplashScreen = (props): ReactElement => {
 
   return (
     <View style={styles.container}>
-      <Text>Home Screen</Text>
+      <Text>SPlash Screen</Text>
       <Button
         onPress={()=>move(AppRoute.HOME)}
         title="Home"
-        color="#00f"
-      />
-
-      <Button
-        onPress={()=>move(AppRoute.SIGN_IN)}
-        title="SIGN_IN"
-        color="#00f"
-      />
-
-      <Button
-        onPress={()=>move(AppRoute.WELCOME)}
-        title="Welcome"
         color="#00f"
       />
     </View>
