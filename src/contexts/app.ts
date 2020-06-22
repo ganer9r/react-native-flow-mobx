@@ -1,9 +1,10 @@
 import * as React from "react";
-import { AppStore } from "./stores";
+import { AppStore, UserStore } from "../stores";
 
 export function createStores() {
   return { 
     appStore: new AppStore(),
+    userStore: new UserStore(),
   };
 }
 

@@ -1,12 +1,20 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement, useContext } from 'react';
 import {
   Text, StyleSheet, View, Button, Alert,
 } from 'react-native';
 import { AppRoute } from '../../../src/navigations/app-routes';
+import { AuthContext, AppContext } from '../../contexts'
 
 export const SignInScreen = (props): ReactElement => {
+  const { userStore } = React.useContext(AppContext);
+
   const move = (page: string) => {
-    props.navigation.navigate(page);
+    props.navigation.navigate(page)
+  }
+
+  const signin = () => {
+    userStore.setToken('11111')
+    props.navigation.goBack()
   }
 
   return (
@@ -14,8 +22,8 @@ export const SignInScreen = (props): ReactElement => {
       <Text>SignIn Screen</Text>
       <Text>----------------------------</Text>
       <Button
-        onPress={() => move(AppRoute.HOME)}
-        title="move Home"
+        onPress={() => signin()}
+        title="Sign In"
         color="#00f"
       />
       <Button
